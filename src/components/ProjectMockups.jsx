@@ -29,13 +29,16 @@ export const GymTrackMockup = () => {
             <Dumbbell className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xs font-semibold tracking-wide text-stone-200">GymTrack AI Dashboard</div>
-            <div className="text-[10px] text-stone-400 font-mono">Member & Admin Console · v2.4</div>
+            <div className="text-xs font-semibold tracking-wide text-stone-200 flex items-center gap-1.5">
+              <span>Gymation (GymTrack AI)</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30">Live App</span>
+            </div>
+            <div className="text-[10px] text-stone-400 font-mono">gymation-jooz.vercel.app</div>
           </div>
         </div>
         <div className="flex items-center gap-2 text-[10px] bg-stone-800/80 px-2.5 py-1 rounded-full border border-stone-700/60 text-emerald-400 font-mono">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Biometric Gateway Active
+          Live Deployment Active
         </div>
       </div>
 
@@ -108,13 +111,16 @@ export const CareerBridgeMockup = () => {
             <Briefcase className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-xs font-semibold tracking-wide text-slate-200">CareerBridge Placement Hub</div>
-            <div className="text-[10px] text-slate-400 font-mono">TPO & Student Ecosystem · Active Build</div>
+            <div className="text-xs font-semibold tracking-wide text-slate-200 flex items-center gap-1.5">
+              <span>CareerBridge Platform</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">Live App</span>
+            </div>
+            <div className="text-[10px] text-slate-400 font-mono">career-bridge-rho.vercel.app</div>
           </div>
         </div>
         <div className="flex items-center gap-2 text-[10px] bg-blue-950/80 px-2.5 py-1 rounded-full border border-blue-800/60 text-blue-300 font-mono">
           <Sparkles className="w-3 h-3 text-blue-400" />
-          AI Resume Matcher 94%
+          Live Deployment Active
         </div>
       </div>
 
@@ -186,12 +192,12 @@ export const VarsaMockup = () => {
           </div>
           <div>
             <div className="text-xs font-semibold tracking-wide text-stone-200">Varsa (वारसा) Cultural Archive</div>
-            <div className="text-[10px] text-stone-400 font-mono">Gadchiroli & Chandrapur Heritage Portal</div>
+            <div className="text-[10px] text-stone-400 font-mono">Maharashtra Digital Heritage Portal · All 36 Districts</div>
           </div>
         </div>
         <div className="flex items-center gap-2 text-[10px] bg-stone-800/80 px-2.5 py-1 rounded-full border border-stone-700/60 text-emerald-300 font-mono">
           <MapPin className="w-3 h-3 text-emerald-400" />
-          Eastern Vidarbha Region
+          Statewide Heritage Registry
         </div>
       </div>
 
@@ -202,17 +208,17 @@ export const VarsaMockup = () => {
             <span>Archived Crafts</span>
             <Palette className="w-3 h-3 text-emerald-400" />
           </div>
-          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">140+</div>
-          <div className="text-[9px] text-emerald-400">Bell Metal & Handlooms</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">380+</div>
+          <div className="text-[9px] text-emerald-400">Paithani, Warli & Dokra</div>
         </div>
 
         <div className="bg-stone-800/60 border border-stone-700/50 rounded-lg p-2.5">
           <div className="flex items-center justify-between text-stone-400 text-[10px] mb-1">
-            <span>Local Artisans</span>
+            <span>State Artisans</span>
             <Layers className="w-3 h-3 text-emerald-400" />
           </div>
-          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">58</div>
-          <div className="text-[9px] text-stone-400">Community verified</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">260+</div>
+          <div className="text-[9px] text-stone-400">Verified communities</div>
         </div>
 
         <div className="bg-stone-800/60 border border-stone-700/50 rounded-lg p-2.5">
@@ -220,31 +226,31 @@ export const VarsaMockup = () => {
             <span>AI Classification</span>
             <Sparkles className="w-3 h-3 text-emerald-400" />
           </div>
-          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">98.1%</div>
-          <div className="text-[9px] text-emerald-300">Folklore tagging</div>
+          <div className="text-base sm:text-lg font-bold font-mono text-stone-100">98.6%</div>
+          <div className="text-[9px] text-emerald-300">Multilingual metadata</div>
         </div>
       </div>
 
       {/* Bottom Archive Samples */}
       <div className="bg-stone-950/70 border border-stone-800 rounded-lg p-3 text-[11px] space-y-2">
         <div className="flex items-center justify-between text-stone-400 text-[10px] pb-1.5 border-b border-stone-800/80">
-          <span className="font-semibold text-stone-300">Featured Regional Heritage Records</span>
+          <span className="font-semibold text-stone-300">Featured Maharashtra Heritage Records</span>
           <span className="font-mono text-stone-500">Digital Registry</span>
         </div>
         <div className="space-y-1.5">
           <div className="flex items-center justify-between text-stone-300 py-0.5">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              Gadchiroli Dokra & Bell Metal Bell Craft — Bhamragad Clan
+              Yeola Paithani Silk Handloom & Pure Zari Craft — Nashik Division
             </span>
-            <span className="text-[10px] font-mono text-stone-400 bg-stone-800 px-1.5 py-0.5 rounded">Handcraft Archive</span>
+            <span className="text-[10px] font-mono text-stone-400 bg-stone-800 px-1.5 py-0.5 rounded">Handloom Archive</span>
           </div>
           <div className="flex items-center justify-between text-stone-300 py-0.5">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              Nagbhid Traditional Cotton Tussar Weave & Natural Dye
+              Warli Indigenous Tribal Canvas & Folklore Painting — Palghar / North Konkan
             </span>
-            <span className="text-[10px] font-mono text-stone-400 bg-stone-800 px-1.5 py-0.5 rounded">Chandrapur Heritage</span>
+            <span className="text-[10px] font-mono text-stone-400 bg-stone-800 px-1.5 py-0.5 rounded">Folk Art Archive</span>
           </div>
         </div>
       </div>

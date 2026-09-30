@@ -46,7 +46,7 @@ export const portfolioData = {
       category: "initiative",
       categoryColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
       dotColor: "bg-emerald-500",
-      title: "Initiated Varsa — AI-assisted digital heritage discovery & cultural preservation platform for Gadchiroli & Chandrapur."
+      title: "Initiated Varsa — AI-assisted digital heritage discovery & cultural preservation platform across Maharashtra."
     },
     {
       date: "2025",
@@ -102,8 +102,8 @@ export const portfolioData = {
       institution: "Shivaji High School and Jr. Science College",
       affiliation: "Maharashtra State Board",
       location: "Gadchiroli, Maharashtra",
-      duration: "2020 – 2022",
-      score: "Percentage: 54.00%",
+      duration: "2021 – 2022",
+      score: "Percentage: 60.20%",
       badge: "Completed"
     },
     {
@@ -152,7 +152,7 @@ export const portfolioData = {
       ],
       technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "AI Integrations"],
       githubUrl: "https://github.com/NitinCodes2408/GymTrack-AI",
-      liveUrl: null,
+      liveUrl: "https://gymation-jooz.vercel.app/",
       accentColor: "from-amber-500/20 to-orange-500/10",
       themeColor: "orange",
       previewType: "gym"
@@ -173,7 +173,7 @@ export const portfolioData = {
       ],
       technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "AI Workflows"],
       githubUrl: "https://github.com/NitinCodes2408/CareerBridge",
-      liveUrl: null,
+      liveUrl: "https://career-bridge-rho.vercel.app/",
       accentColor: "from-blue-500/20 to-indigo-500/10",
       themeColor: "blue",
       previewType: "career"
@@ -183,14 +183,14 @@ export const portfolioData = {
       title: "Varsa",
       subtitle: "AI-Powered Cultural Heritage Discovery Platform",
       category: "Cultural Heritage Platform · 2026",
-      description: "A digital heritage discovery and preservation platform focused on discovering, archiving, and showcasing indigenous crafts, folklore, artisans, regional cuisines, and cultural assets of Gadchiroli and Chandrapur districts using AI-assisted classification and validation workflows.",
-      extendedDescription: "Varsa serves as a digital sanctuary for local heritage, connecting regional artisans and tribal storytellers with a broader audience. The platform categorizes folklore, traditional recipes, and handcrafted goods, using data verification workflows to preserve cultural identity.",
+      description: "A digital heritage discovery and preservation platform built to discover, archive, and showcase the indigenous crafts, folklore, traditional artisans, cuisines, and cultural treasures across Maharashtra using AI-assisted classification, verification, and geotagged digital archives.",
+      extendedDescription: "Varsa serves as a state-wide digital sanctuary for Maharashtra's diverse cultural legacy—from Warli tribal arts of North Konkan and Paithani silk handlooms of Marathwada/Nashik to Kolhapuri leather crafts and Vidarbha Dokra metalwork. The platform connects rural artisans with global audiences, using AI validation to preserve vulnerable oral traditions and regional crafts.",
       features: [
-        "Preservation directory for indigenous crafts, folk arts & cuisine",
-        "Artisan profiles with direct community contact facilitation",
-        "AI-assisted folklore categorization and cultural metadata indexing",
-        "Interactive regional discovery map for Gadchiroli & Chandrapur",
-        "Clean, responsive editorial presentation and multimedia archive"
+        "Statewide cultural directory preserving indigenous crafts, folk arts, folklore & traditional cuisines across Maharashtra",
+        "Artisan profiles with direct community contact facilitation & craft showcase",
+        "AI-assisted folklore categorization, oral history transcription & cultural metadata indexing",
+        "Interactive regional discovery map spanning all cultural zones & districts of Maharashtra",
+        "Clean, responsive editorial multimedia digital archive"
       ],
       technologies: ["React", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AI Classification"],
       githubUrl: "https://github.com/NitinCodes2408/Varsa",
