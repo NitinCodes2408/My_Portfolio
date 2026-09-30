@@ -12,9 +12,9 @@ export const Hero = () => {
         <img
           src={personal.profilePhoto}
           alt={personal.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.48]"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.82]"
           style={{
-            transform: 'scale(1.38)',
+            transform: 'scale(1.72)',
             transformOrigin: '50% 16%'
           }}
           loading="eager"
