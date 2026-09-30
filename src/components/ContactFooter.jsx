@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Github, Linkedin, MapPin, Check, Copy, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, Github, Linkedin, Check, Copy, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const ContactFooter = () => {
@@ -13,7 +14,14 @@ export const ContactFooter = () => {
   };
 
   return (
-    <footer id="contact" className="py-12 pb-24">
+    <motion.footer 
+      id="contact" 
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="py-12 pb-24"
+    >
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-6 pt-1">
         <Mail className="w-4 h-4 text-orange-500 flex-shrink-0" />
@@ -31,9 +39,9 @@ export const ContactFooter = () => {
         {/* Contact Links Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
           {/* Email Item */}
-          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 group">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
                 <Mail className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -57,9 +65,9 @@ export const ContactFooter = () => {
           </div>
 
           {/* Phone Item */}
-          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -87,10 +95,10 @@ export const ContactFooter = () => {
             href={personal.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-orange-300 hover:bg-orange-50/40 transition-colors group"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105">
                 <Linkedin className="w-4 h-4" />
               </div>
               <div>
@@ -100,7 +108,7 @@ export const ContactFooter = () => {
                 </div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-colors" />
+            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
 
           {/* GitHub */}
@@ -108,10 +116,10 @@ export const ContactFooter = () => {
             href={personal.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-orange-300 hover:bg-orange-50/40 transition-colors group"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105">
                 <Github className="w-4 h-4" />
               </div>
               <div>
@@ -121,7 +129,7 @@ export const ContactFooter = () => {
                 </div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-colors" />
+            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>
 
@@ -137,6 +145,6 @@ export const ContactFooter = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Cpu, Code2, Database, Wrench, Sparkles, Binary } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
@@ -15,7 +16,14 @@ export const TechnicalSkills = () => {
   ];
 
   return (
-    <section id="skills" className="py-10 border-b border-gray-100">
+    <motion.section 
+      id="skills" 
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+      className="py-10 border-b border-stone-200/70"
+    >
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-6 pt-1">
         <Cpu className="w-4 h-4 text-orange-500 flex-shrink-0" />
@@ -39,7 +47,7 @@ export const TechnicalSkills = () => {
                 {cat.items.map((skill, sIdx) => (
                   <span
                     key={sIdx}
-                    className="text-xs px-2.5 py-1 rounded-full bg-stone-100/90 hover:bg-orange-50 hover:text-orange-800 hover:border-orange-300 text-stone-700 font-sans border border-stone-200/80 transition-colors cursor-default"
+                    className="text-xs px-2.5 py-1 rounded-full bg-stone-100/90 hover:bg-stone-200/70 hover:border-stone-400 hover:text-stone-950 text-stone-700 font-sans border border-stone-200/80 transition-all duration-150 cursor-default"
                   >
                     {skill}
                   </span>
@@ -49,6 +57,6 @@ export const TechnicalSkills = () => {
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 };

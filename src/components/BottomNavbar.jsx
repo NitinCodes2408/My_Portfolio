@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export const BottomNavbar = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -59,9 +60,13 @@ export const BottomNavbar = () => {
               aria-label={item.label}
               aria-current={isActive ? 'page' : undefined}
             >
-              {/* Active Glow Pill Background */}
+              {/* Active Glow Pill Background with smooth layoutId motion */}
               {isActive && (
-                <span className="absolute inset-y-1 inset-x-0.5 bg-neutral-800 rounded-full -z-10 shadow-inner"></span>
+                <motion.span 
+                  layoutId="activeNavPill"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  className="absolute inset-y-1 inset-x-0.5 bg-neutral-800 rounded-full -z-10 shadow-inner"
+                />
               )}
 
               {/* Text */}
@@ -77,9 +82,13 @@ export const BottomNavbar = () => {
 
               {/* Active Top Light Bar matching reference recording */}
               {isActive && (
-                <div className="absolute top-0 w-6 h-[2px] rounded-full bg-orange-400">
+                <motion.div 
+                  layoutId="activeNavIndicator"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  className="absolute top-0 w-6 h-[2px] rounded-full bg-orange-400"
+                >
                   <div className="absolute left-[-20%] top-[2px] w-[140%] h-4 bg-gradient-to-b from-orange-400/25 to-transparent pointer-events-none"></div>
-                </div>
+                </motion.div>
               )}
             </button>
           );

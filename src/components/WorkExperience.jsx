@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Briefcase, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Briefcase, ChevronDown, ChevronUp } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export const WorkExperience = () => {
@@ -34,7 +35,7 @@ export const WorkExperience = () => {
               className="relative pl-5 border-l-2 border-orange-200 pb-7 last:pb-2 group"
             >
               {/* Marker */}
-              <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100 group-hover:scale-125 transition-transform" />
+              <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100 group-hover:scale-125 transition-transform duration-200" />
 
               {/* Period & Location */}
               <p className="text-[10px] font-semibold text-orange-600 uppercase tracking-wider mb-0.5 font-mono">
@@ -56,53 +57,64 @@ export const WorkExperience = () => {
                 {item.summary}
               </p>
 
-              {/* Expandable Bullet Points */}
-              {isExpanded && (
-                <div className="mt-3 pt-3 border-t border-stone-100 space-y-2 text-xs text-stone-600">
-                  <p className="font-semibold text-stone-800 text-[11px] uppercase tracking-wider">
-                    Key Contributions & Responsibilities:
-                  </p>
-                  <ul className="space-y-1.5 pl-0.5">
-                    {item.responsibilities.map((resp, rIdx) => (
-                      <li key={rIdx} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
-                        <span className="leading-relaxed">{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
+              {/* Expandable Bullet Points with AnimatePresence */}
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-3 pt-3 border-t border-stone-100 space-y-2 text-xs text-stone-600">
+                      <p className="font-semibold text-stone-800 text-[11px] uppercase tracking-wider">
+                        Key Contributions & Responsibilities:
+                      </p>
+                      <ul className="space-y-1.5 pl-0.5">
+                        {item.responsibilities.map((resp, rIdx) => (
+                          <li key={rIdx} className="flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
+                            <span className="leading-relaxed">{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
 
-                  {/* Tech stack pills */}
-                  {item.technologies && (
-                    <div className="flex items-center gap-1.5 flex-wrap pt-2">
-                      <span className="text-[10px] text-stone-400 font-medium">Stack:</span>
-                      {item.technologies.map((t, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[10px] px-2 py-0.5 rounded bg-stone-100 text-stone-700 font-mono border border-stone-200"
-                        >
-                          {t}
-                        </span>
-                      ))}
+                      {/* Tech stack pills */}
+                      {item.technologies && (
+                        <div className="flex items-center gap-1.5 flex-wrap pt-2">
+                          <span className="text-[10px] text-stone-400 font-medium">Stack:</span>
+                          {item.technologies.map((t, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="text-[10px] px-2 py-0.5 rounded bg-stone-100 text-stone-700 font-mono border border-stone-200"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Toggle Button matching reference site */}
               <button
                 onClick={() => toggleExpand(idx)}
-                className="text-xs text-orange-600 hover:text-orange-700 mt-2 font-semibold transition-colors flex items-center gap-1"
+                className="text-xs text-orange-600 hover:text-orange-700 mt-2 font-semibold transition-colors flex items-center gap-1 py-0.5"
                 aria-label={isExpanded ? "Show less details" : "Show more details"}
               >
                 {isExpanded ? (
                   <>
                     <span>show less</span>
-                    <ChevronUp className="w-3 h-3" />
+                    <ChevronUp className="w-3 h-3 transition-transform duration-200" />
                   </>
                 ) : (
                   <>
                     <span>show more</span>
-                    <ChevronDown className="w-3 h-3" />
+                    <ChevronDown className="w-3 h-3 transition-transform duration-200" />
                   </>
                 )}
               </button>
