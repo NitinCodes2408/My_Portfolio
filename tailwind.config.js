@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Newsreader"', '"Lora"', '"EB Garamond"', 'Georgia', 'serif'],
-        sans: ['"Inter"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
+        serif: ['"Times New Roman"', 'Times', 'serif'],
+        sans: ['"Times New Roman"', 'Times', 'serif'],
+        mono: ['"Times New Roman"', 'Times', 'serif'],
       },
       colors: {
         paper: '#faf9f6',
