@@ -12,14 +12,21 @@ export const portfolioData = {
     quote: "“Simplicity is prerequisite for reliability.”",
     quoteAuthor: "Edsger W. Dijkstra",
     bioParagraphs: [
-      "I am a Software Engineer and Full-Stack Developer pursuing my Bachelor of Technology in Artificial Intelligence at G. H. Raisoni College of Engineering & Management, Nagpur (CGPA: 8.12).",
-      "My core engineering focus centers on building reliable full-stack applications, scalable backend systems, and data-driven software solutions. I work with modern web technologies including JavaScript, React, Node.js, Express, and SQL databases, grounded in rigorous Object-Oriented Programming, Data Structures & Algorithms, and CI/CD practices.",
-      "Beyond core software engineering, I apply foundational Machine Learning and data analysis with Python, Pandas, NumPy, and Scikit-learn to solve real-world workflows—from automated campus placement platforms to regional heritage archival systems.",
-      "I'm always eager to collaborate on challenging engineering problems, scalable web platforms, and impactful technical initiatives. Feel free to connect!"
+      "I am a Software Engineer and Full-Stack Developer pursuing my Bachelor of Technology in Artificial Intelligence at G. H. Raisoni College of Engineering & Management, Nagpur (CGPA: 8.12, Expected Graduation: 2027).",
+      "My core engineering focus centers on building reliable full-stack applications, robust backend architectures, and clean, responsive interfaces. I work with modern web and application technologies including React, JavaScript, Java, Node.js, Express, Android Development, and SQL databases, grounded in rigorous Object-Oriented Programming, Data Structures & Algorithms, and Software Engineering practices.",
+      "Alongside core software development, I have practical familiarity with foundational Machine Learning workflows and Data Analysis using Python, Pandas, NumPy, and Scikit-learn—applied toward high-utility platforms like automated campus recruitment systems and regional cultural heritage preservation.",
+      "I'm always eager to collaborate on challenging engineering problems, scalable platforms, and impactful technical initiatives. Feel free to connect!"
     ]
   },
 
   recentUpdates: [
+    {
+      date: "Feb – Mar 2026",
+      category: "work",
+      categoryColor: "bg-orange-50 text-orange-600 border-orange-200",
+      dotColor: "bg-orange-500",
+      title: "Completed Java Programming Internship at CodeAlpha — focusing on core Java, OOP, and structured problem solving."
+    },
     {
       date: "Feb 2026",
       category: "work",
@@ -32,7 +39,7 @@ export const portfolioData = {
       category: "project",
       categoryColor: "bg-blue-50 text-blue-600 border-blue-200",
       dotColor: "bg-blue-500",
-      title: "Built GymTrack AI — an AI-powered gym and member management system with biometric attendance integration."
+      title: "Engineered GymTrack AI — an AI-powered gym and member management platform with biometric attendance integration."
     },
     {
       date: "2026",
@@ -46,7 +53,7 @@ export const portfolioData = {
       category: "initiative",
       categoryColor: "bg-emerald-50 text-emerald-600 border-emerald-200",
       dotColor: "bg-emerald-500",
-      title: "Initiated Varsa — AI-assisted digital heritage discovery & cultural preservation platform across Maharashtra."
+      title: "Initiated Varsa — AI-assisted digital heritage discovery & cultural preservation platform for Maharashtra."
     },
     {
       date: "2025",
@@ -60,7 +67,7 @@ export const portfolioData = {
       category: "education",
       categoryColor: "bg-purple-50 text-purple-600 border-purple-200",
       dotColor: "bg-purple-500",
-      title: "Commenced B.Tech in Artificial Intelligence at G. H. Raisoni College of Engineering & Management."
+      title: "Commenced B.Tech in Artificial Intelligence at G. H. Raisoni College of Engineering & Management, Nagpur."
     },
     {
       date: "2024",
@@ -84,7 +91,7 @@ export const portfolioData = {
       institution: "G. H. Raisoni College of Engineering & Management",
       affiliation: "RTMNU",
       location: "Nagpur, Maharashtra",
-      duration: "2024 – 2027 (Expected)",
+      duration: "Expected Graduation: 2027",
       score: "CGPA: 8.12",
       badge: "In Progress"
     },
@@ -93,25 +100,25 @@ export const portfolioData = {
       institution: "Ballarpur Institute of Technology",
       affiliation: "MSBTE",
       location: "Ballarpur, Dist. Chandrapur, Maharashtra",
-      duration: "2021 – 2024",
+      duration: "2022 – 2024",
       score: "Percentage: 75.94%",
       badge: "Completed"
     },
     {
-      degree: "Higher Secondary Certificate (H.S.C)",
+      degree: "H.S.C. – Maharashtra State Board",
       institution: "Shivaji High School and Jr. Science College",
       affiliation: "Maharashtra State Board",
       location: "Gadchiroli, Maharashtra",
-      duration: "2021 – 2022",
+      duration: "2022",
       score: "Percentage: 60.20%",
       badge: "Completed"
     },
     {
-      degree: "Secondary School Certificate (S.S.C)",
+      degree: "S.S.C. – Maharashtra State Board",
       institution: "Shivaji High School and Jr. Science College",
       affiliation: "Maharashtra State Board",
       location: "Gadchiroli, Maharashtra",
-      duration: "2019 – 2020",
+      duration: "2020",
       score: "Percentage: 75.60%",
       badge: "Completed"
     }
@@ -121,7 +128,7 @@ export const portfolioData = {
     {
       role: "Web Development Intern",
       company: "CodeSoft Infotech Pvt. Ltd.",
-      period: "Feb 2026",
+      period: "February 2026",
       location: "Nagpur / Remote, India",
       summary: "Developed responsive and user-friendly web applications using HTML, CSS, JavaScript, and React.js. Collaborated on front-end development, resolved UI anomalies, and optimized layout responsiveness across devices.",
       responsibilities: [
@@ -131,26 +138,41 @@ export const portfolioData = {
         "Ensured seamless cross-browser compatibility and component modularity for client deliverables."
       ],
       technologies: ["React.js", "JavaScript", "HTML5", "CSS3", "Git"]
+    },
+    {
+      role: "Java Programming Intern",
+      company: "CodeAlpha",
+      period: "10 February 2026 – 10 March 2026",
+      location: "Remote, India",
+      summary: "Focused on core Java programming, Object-Oriented Programming (OOP) concepts, structured programming, problem solving, and practical application development.",
+      responsibilities: [
+        "Implemented core Java applications and algorithms focusing on Object-Oriented Programming principles, exception handling, and modular design.",
+        "Applied structured programming and clean code practices to develop robust console and application modules.",
+        "Engineered problem-solving algorithms and data manipulation routines with structured testing and debugging.",
+        "Utilized Git for source code management, branch workflows, and version-controlled deliverables."
+      ],
+      technologies: ["Java", "OOP", "Data Structures", "Git"]
     }
   ],
 
   projects: [
     {
       id: "gymtrack-ai",
+      number: "01",
       title: "GymTrack AI",
       subtitle: "AI-Powered Gym Management Platform",
-      category: "Solo Project · 2026",
-      description: "Developed an AI-powered gym management platform engineered with comprehensive Admin and Member dashboards. Facilitates end-to-end membership management, automated attendance logs, workout planning, and subscription tracking with responsive interfaces and biometric attendance integration.",
-      extendedDescription: "GymTrack AI resolves operational inefficiencies in fitness clubs by unifying member onboarding, automated subscription renewal alerts, smart attendance tracking via biometric logs, and personalized workout regimen trackers into an intuitive, high-performance interface.",
+      category: "Full-Stack Web Platform · 2026",
+      description: "An AI-powered gym management platform engineered with comprehensive Admin and Member dashboards. Facilitates end-to-end membership lifecycle management, automated attendance logs, workout regimen scheduling, and subscription tracking with responsive interfaces and biometric attendance integration.",
+      extendedDescription: "GymTrack AI resolves operational inefficiencies in fitness centers by unifying member onboarding, automated subscription renewal alerts, smart attendance tracking via biometric logs, and personalized workout regimen trackers into an intuitive, high-performance interface.",
       features: [
-        "Role-based Admin & Member Dashboards",
-        "Membership lifecycle & subscription management",
-        "Automated attendance tracking & biometric integration",
-        "Interactive workout regimen & progress monitor",
-        "Responsive, performance-tuned user interface",
+        "Role-based Admin & Member Dashboards with permission separation",
+        "Membership lifecycle & automated subscription renewal alerts",
+        "Automated attendance tracking & biometric verification integration",
+        "Interactive workout regimen planning & member progress monitoring",
+        "Responsive, performance-tuned mobile and desktop interface",
         "Predictive member analytics & retention alerts"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "AI Integrations"],
+      technologies: ["React", "JavaScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "Biometric Integration"],
       githubUrl: "https://github.com/NitinCodes2408/GymTrack-AI",
       liveUrl: "https://gymation-jooz.vercel.app/",
       accentColor: "from-amber-500/20 to-orange-500/10",
@@ -159,19 +181,20 @@ export const portfolioData = {
     },
     {
       id: "careerbridge",
+      number: "02",
       title: "CareerBridge",
       subtitle: "AI-Powered Placement & Career Platform",
-      category: "Group Project / Active Development · 2026",
-      description: "An AI-powered placement and career platform designed to streamline campus recruitment workflows. Features dedicated Student and Admin dashboards with integrated resume parsing, verified job listings, application status pipelines, and AI-driven candidate profile enhancements.",
+      category: "Campus Placement Platform · Active Development · 2026",
+      description: "An AI-powered placement and career platform designed to streamline campus recruitment workflows. Features dedicated Student and Admin dashboards with integrated resume parsing, verified job listings, application status pipelines, and AI-assisted candidate profile enhancements.",
       extendedDescription: "CareerBridge bridges the gap between graduating students and campus recruitment cells. It simplifies resume uploads, offers automated eligibility screening against recruiter criteria, and provides real-time application pipeline tracking with administrative audit logs.",
       features: [
         "Student and Training & Placement Officer (TPO) Portals",
-        "Automated resume management & profile verification",
-        "Curated job listings with eligibility screening",
-        "Real-time application status tracking pipeline",
+        "Automated resume management & student profile verification",
+        "Curated job listings with eligibility screening against recruiter criteria",
+        "Real-time application status tracking pipeline with interview stages",
         "AI-assisted career matching and skill gap insights"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "AI Workflows"],
+      technologies: ["React", "JavaScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AI Workflows"],
       githubUrl: "https://github.com/NitinCodes2408/CareerBridge",
       liveUrl: "https://career-bridge-rho.vercel.app/",
       accentColor: "from-blue-500/20 to-indigo-500/10",
@@ -180,19 +203,20 @@ export const portfolioData = {
     },
     {
       id: "varsa",
+      number: "03",
       title: "Varsa",
       subtitle: "AI-Powered Cultural Heritage Discovery Platform",
-      category: "Cultural Heritage Platform · 2026",
-      description: "A digital heritage discovery and preservation platform built to discover, archive, and showcase the indigenous crafts, folklore, traditional artisans, cuisines, and cultural treasures across Maharashtra using AI-assisted classification, verification, and geotagged digital archives.",
-      extendedDescription: "Varsa serves as a state-wide digital sanctuary for Maharashtra's diverse cultural legacy—from Warli tribal arts of North Konkan and Paithani silk handlooms of Marathwada/Nashik to Kolhapuri leather crafts and Vidarbha Dokra metalwork. The platform connects rural artisans with global audiences, using AI validation to preserve vulnerable oral traditions and regional crafts.",
+      category: "Digital Cultural Heritage · 2026",
+      description: "A digital heritage discovery and preservation platform built to discover, archive, and showcase indigenous crafts, local artisans, culinary traditions, folklore, and cultural treasures across Gadchiroli, Chandrapur, and Maharashtra using AI-assisted classification and geotagged digital archives.",
+      extendedDescription: "Varsa focuses on the rich cultural heritage of Maharashtra, with dedicated spotlights on regional crafts in Gadchiroli and Chandrapur, tribal Dokra metalcraft, Warli folk paintings, and Paithani silk handlooms. It incorporates AI and data-processing workflows for collecting, categorizing, and validating heritage information and connecting traditional artisans with wider discovery.",
       features: [
-        "Statewide cultural directory preserving indigenous crafts, folk arts, folklore & traditional cuisines across Maharashtra",
-        "Artisan profiles with direct community contact facilitation & craft showcase",
-        "AI-assisted folklore categorization, oral history transcription & cultural metadata indexing",
-        "Interactive regional discovery map spanning all cultural zones & districts of Maharashtra",
+        "Cultural heritage directory preserving indigenous crafts, artisans, food & folklore",
+        "Regional heritage focus on Gadchiroli, Chandrapur & Maharashtra districts",
+        "AI and data-processing workflows for collecting, categorizing & validating heritage information",
+        "Artisan storytelling profiles with craft documentation & community links",
         "Clean, responsive editorial multimedia digital archive"
       ],
-      technologies: ["React", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AI Classification"],
+      technologies: ["React", "JavaScript", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AI Data Processing"],
       githubUrl: "https://github.com/NitinCodes2408/Varsa",
       liveUrl: null,
       accentColor: "from-emerald-500/20 to-teal-500/10",
@@ -203,17 +227,21 @@ export const portfolioData = {
 
   skills: {
     languages: ["Java", "JavaScript", "Python", "HTML", "CSS", "SQL"],
-    frontend: ["React", "Tailwind CSS", "HTML5", "CSS3", "JavaScript (ES6+)"],
+    frontend: ["React", "Tailwind CSS"],
     backend: ["Node.js", "Express", "Firebase", "FastAPI"],
     databases: ["MySQL", "PostgreSQL"],
-    tools: ["Git", "GitHub", "VS Code", "Postman", "Vite"],
+    development: ["Full-Stack Web Development", "Android Development"],
+    tools: ["Git", "GitHub", "VS Code", "Android Studio"],
     concepts: [
-      "Object-Oriented Programming (OOP)",
-      "Data Structures & Algorithms (DSA)",
-      "Software Engineering Practices",
-      "CI/CD Workflows",
-      "Basic Machine Learning",
-      "Pandas & NumPy",
+      "Object-Oriented Programming",
+      "Data Structures & Algorithms",
+      "Software Engineering"
+    ],
+    machineLearning: [
+      "Machine Learning — basic familiarity",
+      "Data Analysis",
+      "Pandas",
+      "NumPy",
       "Scikit-learn"
     ]
   },

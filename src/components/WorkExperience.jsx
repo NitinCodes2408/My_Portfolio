@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, ChevronDown, ChevronUp } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const WorkExperience = () => {
   const { workExperience } = portfolioData;
-  const [expandedItems, setExpandedItems] = useState({ 0: true });
+  const [expandedItems, setExpandedItems] = useState({ 0: false, 1: false });
 
   const toggleExpand = (index) => {
     setExpandedItems((prev) => ({
@@ -16,44 +17,45 @@ export const WorkExperience = () => {
 
   return (
     <div>
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-6 pt-1">
-        <Briefcase className="w-4 h-4 text-orange-500 flex-shrink-0" />
-        <h2 className="text-xs font-bold text-stone-900 uppercase tracking-widest font-sans">
-          Work Experience
-        </h2>
-        <div className="flex-1 h-px bg-stone-200"></div>
-      </div>
+      {/* Section Header with masked reveal */}
+      <SectionHeader icon={Briefcase} title="Work Experience" />
 
-      {/* Vertical Timeline */}
-      <div className="overflow-y-auto max-h-[460px] scrollbar-thin-visible pr-2">
+      {/* Vertical Timeline - with data-lenis-prevent for independent scrolling */}
+      <div 
+        className="overflow-y-auto max-h-[420px] scrollbar-thin-visible pr-2 overscroll-contain"
+        data-lenis-prevent
+      >
         {workExperience.map((item, idx) => {
           const isExpanded = !!expandedItems[idx];
           return (
-            <div
+            <motion.div
               key={idx}
-              className="relative pl-5 border-l-2 border-orange-200 pb-7 last:pb-2 group"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="relative pl-5 border-l-2 border-orange-200/80 pb-7 last:pb-0 group"
             >
               {/* Marker */}
               <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100 group-hover:scale-125 transition-transform duration-200" />
 
               {/* Period & Location */}
-              <p className="text-[10px] font-semibold text-orange-600 uppercase tracking-wider mb-0.5 font-mono">
+              <p className="text-[10px] font-semibold text-orange-600 uppercase tracking-widest mb-0.5 font-mono">
                 {item.period} · {item.location}
               </p>
 
               {/* Role Title */}
-              <h3 className="text-sm font-semibold text-stone-900 leading-snug">
+              <h3 className="text-sm font-bold text-gray-900 leading-snug font-sans">
                 {item.role}
               </h3>
 
               {/* Company */}
-              <p className="text-xs text-stone-500 mt-0.5 mb-1.5">
+              <p className="text-xs text-gray-600 mt-0.5 mb-1.5 font-sans font-medium">
                 {item.company}
               </p>
 
               {/* Summary */}
-              <p className="text-sm text-stone-600 leading-relaxed font-sans">
+              <p className="text-sm text-gray-600 leading-relaxed font-sans">
                 {item.summary}
               </p>
 
@@ -65,30 +67,30 @@ export const WorkExperience = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-3 pt-3 border-t border-stone-100 space-y-2 text-xs text-stone-600">
-                      <p className="font-semibold text-stone-800 text-[11px] uppercase tracking-wider">
-                        Key Contributions & Responsibilities:
+                    <div className="mt-3 pt-3 border-t border-gray-100 space-y-2.5 text-xs text-gray-600">
+                      <p className="font-semibold text-gray-800 text-[11px] uppercase tracking-wider font-sans">
+                        Key Responsibilities & Contributions:
                       </p>
-                      <ul className="space-y-1.5 pl-0.5">
+                      <ul className="space-y-1.5 pl-1">
                         {item.responsibilities.map((resp, rIdx) => (
                           <li key={rIdx} className="flex items-start gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 flex-shrink-0" />
-                            <span className="leading-relaxed">{resp}</span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-1.5 flex-shrink-0" />
+                            <span className="leading-relaxed text-gray-700 font-sans">{resp}</span>
                           </li>
                         ))}
                       </ul>
 
-                      {/* Tech stack pills */}
+                      {/* Stack pills */}
                       {item.technologies && (
                         <div className="flex items-center gap-1.5 flex-wrap pt-2">
-                          <span className="text-[10px] text-stone-400 font-medium">Stack:</span>
+                          <span className="text-[10px] text-gray-400 font-medium font-sans">Stack:</span>
                           {item.technologies.map((t, tIdx) => (
                             <span
                               key={tIdx}
-                              className="text-[10px] px-2 py-0.5 rounded bg-stone-100 text-stone-700 font-mono border border-stone-200"
+                              className="text-[10px] px-2 py-0.5 rounded bg-gray-100 text-gray-700 font-mono border border-gray-200"
                             >
                               {t}
                             </span>
@@ -100,25 +102,18 @@ export const WorkExperience = () => {
                 )}
               </AnimatePresence>
 
-              {/* Toggle Button matching reference site */}
+              {/* Toggle Button matching reference style */}
               <button
                 onClick={() => toggleExpand(idx)}
-                className="text-xs text-orange-600 hover:text-orange-700 mt-2 font-semibold transition-colors flex items-center gap-1 py-0.5"
+                className="inline-flex items-center gap-1 text-xs text-orange-600 hover:text-orange-800 mt-2 font-semibold transition-colors cursor-pointer group/btn font-sans"
                 aria-label={isExpanded ? "Show less details" : "Show more details"}
               >
-                {isExpanded ? (
-                  <>
-                    <span>show less</span>
-                    <ChevronUp className="w-3 h-3 transition-transform duration-200" />
-                  </>
-                ) : (
-                  <>
-                    <span>show more</span>
-                    <ChevronDown className="w-3 h-3 transition-transform duration-200" />
-                  </>
-                )}
+                <span>{isExpanded ? 'Show less' : 'Show more'}</span>
+                <span className={`transform transition-transform duration-200 ${isExpanded ? 'rotate-180' : 'group-hover/btn:translate-x-0.5'}`}>
+                  {isExpanded ? '↑' : '→'}
+                </span>
               </button>
-            </div>
+            </motion.div>
           );
         })}
       </div>

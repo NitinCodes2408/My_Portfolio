@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Github, Linkedin, Check, Copy, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const ContactFooter = () => {
   const { personal } = portfolioData;
@@ -16,39 +17,39 @@ export const ContactFooter = () => {
   return (
     <motion.footer 
       id="contact" 
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-      className="py-12 pb-24"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+      className="pb-28 sm:pb-32"
     >
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-6 pt-1">
-        <Mail className="w-4 h-4 text-orange-500 flex-shrink-0" />
-        <h2 className="text-xs font-bold text-stone-900 uppercase tracking-widest font-sans">
-          Get In Touch
-        </h2>
-        <div className="flex-1 h-px bg-stone-200"></div>
-      </div>
+      {/* Section Header with masked reveal & extending divider */}
+      <SectionHeader icon={Mail} title="Contact" />
 
       <div className="space-y-6">
-        <p className="text-sm text-stone-600 leading-relaxed font-sans max-w-xl">
-          I am actively seeking software engineering and full-stack development opportunities. If you have an exciting project, opening, or just want to chat about engineering, I'd love to connect.
-        </p>
+        {/* Strong Editorial Finale Heading */}
+        <div className="pt-2">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-gray-950 font-sans uppercase">
+            LET'S BUILD <span className="text-orange-600">SOMETHING.</span>
+          </h3>
+          <p className="text-sm text-gray-600 leading-relaxed font-sans max-w-xl mt-2.5">
+            I am actively seeking software engineering and full-stack development opportunities. If you have an exciting project, opening, or just want to connect, feel free to reach out.
+          </p>
+        </div>
 
         {/* Contact Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
           {/* Email Item */}
-          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50/80 border border-gray-200 hover:border-gray-300 hover:bg-gray-100/70 transition-all duration-200 group">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
+              <div className="w-8 h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105 border border-orange-200/60">
                 <Mail className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] text-stone-400 uppercase font-mono tracking-wider">Email</div>
+                <div className="text-[10px] text-gray-400 uppercase font-mono tracking-wider">Email</div>
                 <a
                   href={`mailto:${personal.email}`}
-                  className="text-xs font-medium text-stone-900 hover:text-orange-600 transition-colors truncate block"
+                  className="text-xs font-semibold text-gray-900 hover:text-orange-600 transition-colors truncate block font-sans"
                 >
                   {personal.email}
                 </a>
@@ -56,7 +57,7 @@ export const ContactFooter = () => {
             </div>
             <button
               onClick={handleCopyEmail}
-              className="p-1.5 text-stone-400 hover:text-stone-700 rounded-md hover:bg-stone-200/60 transition-colors flex-shrink-0 ml-2"
+              className="p-1.5 text-gray-400 hover:text-gray-700 rounded-md hover:bg-gray-200 transition-colors flex-shrink-0 ml-2 cursor-pointer"
               title="Copy email to clipboard"
               aria-label="Copy email"
             >
@@ -65,16 +66,16 @@ export const ContactFooter = () => {
           </div>
 
           {/* Phone Item */}
-          <div className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group">
+          <div className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50/80 border border-gray-200 hover:border-gray-300 hover:bg-gray-100/70 transition-all duration-200 group">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105">
+              <div className="w-8 h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105 border border-orange-200/60">
                 <Phone className="w-4 h-4" />
               </div>
               <div className="min-w-0">
-                <div className="text-[10px] text-stone-400 uppercase font-mono tracking-wider">Phone</div>
+                <div className="text-[10px] text-gray-400 uppercase font-mono tracking-wider">Phone</div>
                 <a
                   href={`tel:${personal.phone.replace(/\s+/g, '')}`}
-                  className="text-xs font-medium text-stone-900 hover:text-orange-600 transition-colors truncate block"
+                  className="text-xs font-semibold text-gray-900 hover:text-orange-600 transition-colors truncate block font-sans"
                 >
                   {personal.phone}
                 </a>
@@ -82,11 +83,11 @@ export const ContactFooter = () => {
             </div>
             <a
               href={`tel:${personal.phone.replace(/\s+/g, '')}`}
-              className="p-1.5 text-stone-400 hover:text-stone-700 rounded-md hover:bg-stone-200/60 transition-colors flex-shrink-0 ml-2"
+              className="p-1.5 text-gray-400 hover:text-gray-700 rounded-md hover:bg-gray-200 transition-colors flex-shrink-0 ml-2"
               title="Call"
               aria-label="Call"
             >
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" />
             </a>
           </div>
 
@@ -95,20 +96,20 @@ export const ContactFooter = () => {
             href={personal.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50/80 border border-gray-200 hover:border-gray-300 hover:bg-gray-100/70 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105">
+              <div className="w-8 h-8 rounded-lg bg-gray-200/80 text-gray-700 group-hover:bg-orange-50 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105 border border-gray-300/50 group-hover:border-orange-200/60">
                 <Linkedin className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-[10px] text-stone-400 uppercase font-mono tracking-wider">LinkedIn</div>
-                <div className="text-xs font-medium text-stone-900 group-hover:text-orange-600 transition-colors">
+                <div className="text-[10px] text-gray-400 uppercase font-mono tracking-wider">LinkedIn</div>
+                <div className="text-xs font-semibold text-gray-900 group-hover:text-orange-600 transition-colors font-sans">
                   in/nitin-bhandare
                 </div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-orange-600 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
 
           {/* GitHub */}
@@ -116,29 +117,29 @@ export const ContactFooter = () => {
             href={personal.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-xl bg-stone-100/80 border border-stone-200/80 hover:border-stone-400 hover:shadow-xs transition-all duration-200 group"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-gray-50/80 border border-gray-200 hover:border-gray-300 hover:bg-gray-100/70 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-8 h-8 rounded-lg bg-stone-200 text-stone-700 group-hover:bg-orange-100 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105">
+              <div className="w-8 h-8 rounded-lg bg-gray-200/80 text-gray-700 group-hover:bg-orange-50 group-hover:text-orange-600 flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105 border border-gray-300/50 group-hover:border-orange-200/60">
                 <Github className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-[10px] text-stone-400 uppercase font-mono tracking-wider">GitHub</div>
-                <div className="text-xs font-medium text-stone-900 group-hover:text-orange-600 transition-colors">
+                <div className="text-[10px] text-gray-400 uppercase font-mono tracking-wider">GitHub</div>
+                <div className="text-xs font-semibold text-gray-900 group-hover:text-orange-600 transition-colors font-sans">
                   @{personal.githubUsername}
                 </div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-orange-600 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-orange-600 transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>
 
-        {/* Footer Editorial Subtitle */}
-        <div className="pt-8 border-t border-stone-200/70 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-400">
+        {/* Footer Editorial Metadata */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-400 font-sans">
           <div>
             © {new Date().getFullYear()} Nitin Bhandare. All rights reserved.
           </div>
-          <div className="flex items-center gap-1.5 font-mono text-[11px]">
+          <div className="flex items-center gap-1.5 font-mono text-[11px] text-gray-500">
             <span>Nagpur, Maharashtra</span>
             <span>·</span>
             <span>Open to Relocation</span>

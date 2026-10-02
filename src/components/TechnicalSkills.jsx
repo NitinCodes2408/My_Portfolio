@@ -1,61 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Code2, Database, Wrench, Sparkles, Binary } from 'lucide-react';
+import { Cpu } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const TechnicalSkills = () => {
   const { skills } = portfolioData;
 
-  const categories = [
-    { title: "Languages", items: skills.languages, icon: Code2 },
-    { title: "Frontend", items: skills.frontend, icon: Sparkles },
-    { title: "Backend", items: skills.backend, icon: Cpu },
-    { title: "Databases", items: skills.databases, icon: Database },
-    { title: "Tools & Platforms", items: skills.tools, icon: Wrench },
-    { title: "Concepts & Fundamentals", items: skills.concepts, icon: Binary }
+  const skillGroups = [
+    { label: "Languages", skills: skills.languages },
+    { label: "Frontend", skills: skills.frontend },
+    { label: "Backend", skills: skills.backend },
+    { label: "Databases", skills: skills.databases },
+    { label: "Development", skills: skills.development },
+    { label: "Tools & Platforms", skills: skills.tools },
+    { label: "Concepts & Fundamentals", skills: skills.concepts },
+    { label: "Machine Learning & Data Analysis", skills: skills.machineLearning }
   ];
 
   return (
     <motion.section 
       id="skills" 
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-      className="py-10 border-b border-stone-200/70"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="mb-14"
     >
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-6 pt-1">
-        <Cpu className="w-4 h-4 text-orange-500 flex-shrink-0" />
-        <h2 className="text-xs font-bold text-stone-900 uppercase tracking-widest font-sans">
-          Technical Skills
-        </h2>
-        <div className="flex-1 h-px bg-stone-200"></div>
-      </div>
+      {/* Section Header with masked reveal & extending divider */}
+      <SectionHeader icon={Cpu} title="Technical Skills" />
 
-      {/* Skills Grid by Category */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-        {categories.map((cat, idx) => {
-          const Icon = cat.icon;
-          return (
-            <div key={idx} className="space-y-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-stone-800">
-                <Icon className="w-3.5 h-3.5 text-orange-500" />
-                <span>{cat.title}</span>
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                {cat.items.map((skill, sIdx) => (
-                  <span
-                    key={sIdx}
-                    className="text-xs px-2.5 py-1 rounded-full bg-stone-100/90 hover:bg-stone-200/70 hover:border-stone-400 hover:text-stone-950 text-stone-700 font-sans border border-stone-200/80 transition-all duration-150 cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+      {/* Skills Groups matching reference layout */}
+      <div className="space-y-6">
+        {skillGroups.map((group, idx) => (
+          <motion.div 
+            key={group.label}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: idx * 0.03, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2.5 font-sans">
+              {group.label}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {group.skills.map((skill, sIdx) => (
+                <span
+                  key={sIdx}
+                  className="text-[11px] px-3 py-1 bg-gray-50 text-gray-700 rounded-full border border-gray-200 font-medium hover:border-orange-300 hover:bg-orange-50/70 hover:text-orange-950 transition-all duration-150 transform hover:-translate-y-0.5 cursor-default select-none shadow-2xs"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-          );
-        })}
+          </motion.div>
+        ))}
       </div>
     </motion.section>
   );

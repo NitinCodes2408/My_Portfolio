@@ -3,24 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  *, html, body {
-    font-family: "Times New Roman", Times, Georgia, serif !important;
+  *, *::before, *::after {
+    font-family: "Times New Roman", Times, Tinos, Georgia, serif !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
     color-scheme: light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: "Times New Roman", Times, Tinos, Georgia, serif !important;
   }
   
+  body, #root, main, nav, section, article, div, p, span, h1, h2, h3, h4, h5, h6, a, button, input, select, textarea, label, code, pre, li, ul, ol, strong, b, em, i, small {
+    font-family: "Times New Roman", Times, Tinos, Georgia, serif !important;
+  }
+
   body {
-    background-color: #faf9f6;
-    color: #1c1917;
+    background-color: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
   }
-  
-  h1, h2, h3, h4, h5, h6, p, span, a, button, input, textarea {
-    font-family: "Times New Roman", Times, Georgia, serif !important;
+
+  ::selection {
+    background-color: #ffedd5;
+    color: #9a3412;
+  }
+
+  /* Accessible focus indicators for keyboard navigation */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
   }
 }
 
-/* Custom scrollbar matching reference site */
+/* Independent inner scroll containers */
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom minimal scrollbar */
 .scrollbar-thin-visible::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .scrollbar-thin-visible::-webkit-scrollbar-track {
@@ -28,12 +57,12 @@
 }
 
 .scrollbar-thin-visible::-webkit-scrollbar-thumb {
-  background: #e7e5e4;
+  background: #e5e7eb;
   border-radius: 9999px;
 }
 
 .scrollbar-thin-visible::-webkit-scrollbar-thumb:hover {
-  background: #d6d3d1;
+  background: #d1d5db;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -44,10 +73,9 @@
   scrollbar-width: none;
 }
 
-/* Subtle transitions */
-::selection {
-  background-color: #fed7aa;
-  color: #7c2d12;
+/* Ultra-subtle paper grain overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
 }
 
 /* Respect user's motion preferences */

@@ -1,56 +1,54 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const Education = () => {
   const { education } = portfolioData;
 
   return (
     <div>
-      {/* Section Header */}
-      <div className="flex items-center gap-3 mb-6 pt-1">
-        <GraduationCap className="w-4 h-4 text-orange-500 flex-shrink-0" />
-        <h2 className="text-xs font-bold text-stone-900 uppercase tracking-widest font-sans">
-          Education
-        </h2>
-        <div className="flex-1 h-px bg-stone-200"></div>
-      </div>
+      {/* Section Header with masked reveal */}
+      <SectionHeader icon={GraduationCap} title="Education" />
 
-      {/* Vertical Timeline */}
-      <div className="overflow-y-auto max-h-[460px] scrollbar-thin-visible pr-2">
+      {/* Vertical Timeline - with data-lenis-prevent for independent scrolling */}
+      <div 
+        className="overflow-y-auto max-h-[420px] scrollbar-thin-visible pr-2 overscroll-contain"
+        data-lenis-prevent
+      >
         {education.map((item, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className="relative pl-5 border-l-2 border-orange-200 pb-6 last:pb-2 group"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.06, ease: [0.16, 1, 0.3, 1] }}
+            className="relative pl-5 border-l-2 border-orange-200/80 pb-7 last:pb-0 group"
           >
             {/* Timeline Marker */}
-            <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100 group-hover:scale-125 transition-transform" />
+            <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100 group-hover:scale-125 transition-transform duration-200" />
 
             {/* Duration & Location */}
-            <p className="text-[10px] font-semibold text-orange-600 uppercase tracking-wider mb-0.5 font-mono">
+            <p className="text-[10px] font-semibold text-orange-600 uppercase tracking-widest mb-0.5 font-mono">
               {item.duration} · {item.location}
             </p>
 
             {/* Degree Title */}
-            <h3 className="text-sm font-semibold text-stone-900 leading-snug">
+            <h3 className="text-sm font-bold text-gray-900 leading-snug font-sans">
               {item.degree}
             </h3>
 
-            {/* Institution & Affiliation */}
-            <p className="text-xs text-stone-600 mt-0.5">
-              {item.institution} {item.affiliation ? `(${item.affiliation})` : ''}
+            {/* Institution */}
+            <p className="text-xs text-gray-600 mt-0.5 font-sans">
+              {item.institution}
             </p>
 
             {/* Score / Grade */}
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs font-medium text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200/80">
-                {item.score}
-              </span>
-              <span className="text-[10px] text-stone-400 font-medium">
-                {item.badge}
-              </span>
-            </div>
-          </div>
+            <p className="text-xs text-gray-400 mt-0.5 font-mono font-medium">
+              {item.score}
+            </p>
+          </motion.div>
         ))}
       </div>
     </div>
