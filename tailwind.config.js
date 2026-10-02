@@ -7,28 +7,39 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Times New Roman"', 'Times', 'serif'],
-        sans: ['"Times New Roman"', 'Times', 'serif'],
-        mono: ['"Times New Roman"', 'Times', 'serif'],
+        sans: ['"Times New Roman"', 'Times', 'Tinos', 'Baskerville', 'Georgia', 'serif'],
+        serif: ['"Times New Roman"', 'Times', 'Tinos', 'Baskerville', 'Georgia', 'serif'],
+        mono: ['"Times New Roman"', 'Times', 'Tinos', 'Baskerville', 'Georgia', 'serif'],
       },
       colors: {
-        paper: '#faf9f6',
-        accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',
-          600: '#d97706',
-          700: '#b45309',
-        },
-        brand: {
-          orange: '#f97316',
-          dark: '#1c1917',
-          muted: '#78716c',
+        orange: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
         }
-      }
+      },
+      animation: {
+        spotlight: "spotlight 2s ease .75s 1 forwards",
+      },
+      keyframes: {
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
+      },
     },
   },
   plugins: [],
